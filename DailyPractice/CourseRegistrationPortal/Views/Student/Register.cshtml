@@ -1,0 +1,45 @@
+@model CourseRegistrationPortal.Models.Student
+
+<h2>Course Registration</h2>
+
+<form asp-action="Register" method="post">
+
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+
+    <br />
+
+    <div>
+        <label asp-for="Course"></label>
+        <select asp-for="Course">
+            <option value="">Select Course</option>
+            <option>ASP.NET Core</option>
+            <option>Java</option>
+            <option>Python</option>
+        </select>
+        <span asp-validation-for="Course"></span>
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <h3>@ViewBag.Message</h3>
+}

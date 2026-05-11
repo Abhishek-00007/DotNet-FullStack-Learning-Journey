@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+
+<h2>Student Registration</h2>
+
+<form method="post">
+
+    <input type="text" asp-for="StudentName" />
+
+    <button type="submit">Register</button>
+
+</form>
+
+<h3>@Model.Message</h3>

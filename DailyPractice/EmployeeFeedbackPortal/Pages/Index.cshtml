@@ -1,0 +1,37 @@
+﻿@page
+@model EmployeeFeedbackPortal.Pages.IndexModel
+
+<h1>Employee Feedback Portal</h1>
+
+<form method="post">
+
+    <div>
+        <label>Employee Name</label>
+        <input asp-for="Employee.EmployeeName" readonly />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Feedback</label>
+        <textarea asp-for="Employee.Feedback"></textarea>
+
+        <span asp-validation-for="Employee.Feedback"
+              style="color:red">
+        </span>
+    </div>
+
+    <br />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+@if (Model.Message != null)
+{
+    <p style="color:green">@Model.Message</p>
+}
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
