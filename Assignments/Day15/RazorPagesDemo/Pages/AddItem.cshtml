@@ -1,0 +1,16 @@
+@page
+@model RazorPagesDemo.Pages.AddItemModel
+
+<h1>Add Item</h1>
+
+<form method="post">
+
+    <input type="text"
+           asp-for="NewItem"
+           placeholder="Enter item name" />
+
+    <button type="submit">
+        Add Item
+    </button>
+
+</form>
