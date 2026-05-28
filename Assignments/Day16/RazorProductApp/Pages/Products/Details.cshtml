@@ -1,0 +1,15 @@
+@page "{id:int}"
+@model RazorProductApp.Pages.Products.DetailsModel
+
+<h1>Product Details</h1>
+
+@if(Model.Product != null)
+{
+    <h2>@Model.Product.Name</h2>
+
+    <p>@Model.Product.Description</p>
+}
+else
+{
+    <p>Product not found</p>
+}

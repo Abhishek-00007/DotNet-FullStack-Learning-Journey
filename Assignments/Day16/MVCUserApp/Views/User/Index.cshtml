@@ -1,0 +1,41 @@
+@model MVCUserApp.Models.User
+
+<h1>User Form</h1>
+
+<form asp-action="Submit" method="post">
+
+    <label>First Name</label>
+    <input asp-for="FirstName" />
+
+    <br /><br />
+
+    <label>Last Name</label>
+    <input asp-for="LastName" />
+
+    <br /><br />
+
+    <label>Age</label>
+    <input asp-for="Age" />
+
+    <br /><br />
+
+    <h3>Address</h3>
+
+    <label>Street</label>
+    <input asp-for="Address.Street" />
+
+    <br /><br />
+
+    <label>City</label>
+    <input asp-for="Address.City" />
+
+    <br /><br />
+
+    <label>ZipCode</label>
+    <input asp-for="Address.ZipCode" />
+
+    <br /><br />
+
+    <button type="submit">Submit</button>
+
+</form>

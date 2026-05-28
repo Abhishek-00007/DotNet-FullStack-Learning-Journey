@@ -1,0 +1,21 @@
+-- CREATE TABLE AppointmentAudit (
+--     AuditID INT PRIMARY KEY IDENTITY(1,1),
+--     AppointmentID INT,
+--     ActionPerformed VARCHAR(50),
+--     ActionDate DATETIME DEFAULT GETDATE()
+-- );
+
+-- CREATE TRIGGER trg_AfterAppointmentInsert
+-- ON Appointments
+-- AFTER INSERT
+-- AS
+-- BEGIN
+--     INSERT INTO AppointmentAudit
+--     (AppointmentID, ActionPerformed)
+--     SELECT
+--         AppointmentID,
+--         'Appointment Created'
+--     FROM inserted;
+-- END;
+
+--SELECT * FROM AppointmentAudit;
