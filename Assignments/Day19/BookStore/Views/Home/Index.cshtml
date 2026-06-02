@@ -1,0 +1,40 @@
+﻿<h1>Online Book Store</h1>
+
+@if(User.Identity!.IsAuthenticated)
+{
+    <p>
+        Welcome @User.Identity.Name
+    </p>
+
+    <p>
+        Role:
+        @User.FindFirst(
+            System.Security.Claims.ClaimTypes.Role)?.Value
+    </p>
+
+    <a asp-controller="Account"
+       asp-action="Logout">
+       Logout
+    </a>
+}
+else
+{
+    <a href="/Account/Login">
+        Login
+    </a>
+
+    <br />
+
+    <a href="/Account/Register">
+        Register
+    </a>
+}
+
+<br />
+<br />
+
+<a asp-controller="Books"
+   asp-action="Index">
+   View Books
+</a>
+

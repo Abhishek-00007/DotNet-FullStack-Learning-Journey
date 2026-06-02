@@ -1,0 +1,11 @@
+@model CustomerFeedbackPortal.Models.Feedback
+
+<h2>Feedback Submitted Successfully</h2>
+
+@if(Model != null)
+{
+    <p>Name: @Model.Name</p>
+    <p>Email: @Model.Email</p>
+    <p>Rating: @Model.Rating</p>
+    <p>Comments: @Model.Comments</p>
+}

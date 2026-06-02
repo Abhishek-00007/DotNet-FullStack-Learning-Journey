@@ -1,0 +1,56 @@
+@model List<BookStore.Models.Book>
+
+<h2>Book Catalog</h2>
+
+<p>
+    <a asp-page="/Books/Create">
+        Add New Book
+    </a>
+</p>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach(var book in Model)
+    {
+        <tr>
+
+            <td>@book.Title</td>
+            <td>@book.Author</td>
+            <td>@book.ISBN</td>
+            <td>@book.Price</td>
+
+            <td>
+
+                <a asp-action="Details"
+                   asp-route-id="@book.Id">
+                   Details
+                </a>
+
+                |
+
+                <a asp-page="/Books/Edit"
+                   asp-route-id="@book.Id">
+                   Edit
+                </a>
+
+                |
+
+                <a asp-page="/Books/Delete"
+                   asp-route-id="@book.Id">
+                   Delete
+                </a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,39 @@
+@page
+@model BookStore.Pages.Books.CreateModel
+
+<h2>Add Book</h2>
+
+<form method="post">
+
+    <div>
+        <label>Title</label>
+        <input asp-for="Book.Title" />
+        <span asp-validation-for="Book.Title"></span>
+    </div>
+
+    <div>
+        <label>Author</label>
+        <input asp-for="Book.Author" />
+        <span asp-validation-for="Book.Author"></span>
+    </div>
+
+    <div>
+        <label>ISBN</label>
+        <input asp-for="Book.ISBN" />
+        <span asp-validation-for="Book.ISBN"></span>
+    </div>
+
+    <div>
+        <label>Price</label>
+        <input asp-for="Book.Price" />
+        <span asp-validation-for="Book.Price"></span>
+    </div>
+
+    <button type="submit">Save</button>
+
+</form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
