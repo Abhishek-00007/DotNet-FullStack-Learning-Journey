@@ -1,0 +1,15 @@
+@model RegisterViewModel
+
+<form method="post">
+    @Html.AntiForgeryToken()
+
+    <input asp-for="Email" />
+    <br />
+
+    <input asp-for="Password" />
+    <br />
+
+    <button type="submit">
+        Register
+    </button>
+</form>

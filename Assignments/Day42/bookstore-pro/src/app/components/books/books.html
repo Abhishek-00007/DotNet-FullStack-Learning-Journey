@@ -1,0 +1,23 @@
+<h1>BookStore Pro</h1>
+
+<h2>Manual Subscription Example</h2>
+
+@for(book of books; track book.id){
+
+  <app-book-card [book]="book"></app-book-card>
+
+}
+
+<hr>
+
+<h2>Async Pipe Example</h2>
+
+@if(books$ | async; as asyncBooks){
+
+  @for(book of asyncBooks; track book.id){
+
+    <app-book-card [book]="book"></app-book-card>
+
+  }
+
+}

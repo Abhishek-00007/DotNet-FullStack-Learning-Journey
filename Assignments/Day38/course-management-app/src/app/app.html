@@ -1,0 +1,12 @@
+<h1>EduLearn Course Management</h1>
+
+<app-course-list
+  [courses]="courses"
+  (courseSelected)="selectCourse($event)">
+</app-course-list>
+
+<hr>
+
+<app-course-detail
+  [course]="selectedCourse">
+</app-course-detail>

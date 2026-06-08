@@ -1,0 +1,65 @@
+@model IEnumerable<LibraryManagementSystem.Models.Book>
+
+<h2>Books</h2>
+
+<input type="text" id="title" placeholder="Book Title" />
+<input type="number" id="authorId" placeholder="Author Id" />
+<input type="number" id="genreId" placeholder="Genre Id" />
+
+<button onclick="addBook()">Add Book</button>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+
+                <td>
+                    <button onclick="deleteBook(@book.Id)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+function addBook()
+{
+    $.ajax({
+        url:'/Books/Create',
+        type:'POST',
+        data:{
+            Title:$('#title').val(),
+            AuthorId:$('#authorId').val(),
+            GenreId:$('#genreId').val()
+        },
+        success:function(){
+            location.reload();
+        }
+    });
+}
+
+function deleteBook(id)
+{
+    $.ajax({
+        url:'/Books/Delete',
+        type:'POST',
+        data:{id:id},
+        success:function(){
+            location.reload();
+        }
+    });
+}
+</script>

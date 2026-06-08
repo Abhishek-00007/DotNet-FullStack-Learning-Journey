@@ -1,0 +1,23 @@
+<div *ngIf="course">
+
+  <h2>Course Details</h2>
+
+  <label>Course Title:</label>
+
+  <br><br>
+
+  <input
+    type="text"
+    [(ngModel)]="course.title">
+
+  <p>
+    <strong>Description:</strong>
+    {{ course.description }}
+  </p>
+
+  <p>
+    <strong>Live Preview:</strong>
+    {{ course.title }}
+  </p>
+
+</div>

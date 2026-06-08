@@ -1,0 +1,47 @@
+﻿<ul class="navbar-nav flex-grow-1">
+
+@if(User.Identity!.IsAuthenticated)
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark"
+           asp-controller="Product"
+           asp-action="Index">
+            Products
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark"
+           asp-controller="Admin"
+           asp-action="Dashboard">
+            Admin
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark"
+           asp-controller="Account"
+           asp-action="Logout">
+            Logout
+        </a>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link text-dark"
+           asp-controller="Account"
+           asp-action="Register">
+            Register
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link text-dark"
+           asp-controller="Account"
+           asp-action="Login">
+            Login
+        </a>
+    </li>
+}
+</ul>

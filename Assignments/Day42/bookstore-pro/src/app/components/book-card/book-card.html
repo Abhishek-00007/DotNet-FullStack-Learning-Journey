@@ -1,0 +1,24 @@
+<div class="card">
+
+  <h3>{{ book.title | uppercase }}</h3>
+
+  <p>
+    <strong>Price:</strong>
+    {{ book.price | currency:'INR' }}
+  </p>
+
+  <p>
+    <strong>Discounted Price:</strong>
+    {{ book.price | discount:20 | currency:'INR' }}
+  </p>
+
+  <p>
+    <strong>Publication Date:</strong>
+    {{ book.publicationDate | date:'longDate' }}
+  </p>
+
+  <p>
+    {{ book.description | slice:0:50 }}...
+  </p>
+
+</div>
